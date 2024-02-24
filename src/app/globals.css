@@ -1,33 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Young+Serif&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+  --marker-color-ingredients: hsl(14, 45%, 36%);
+  --text-color-ingredients: hsl(30, 10%, 34%);
+  --marker-color-time: hsl(332, 51%, 32%);
+  --text-color-time: hsl(230, 10%, 34%);
+  --marker-color-instructions: hsl(14, 45%, 36%);
+  --text-color-instructions: hsl(330, 10%, 34%);
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  @apply bg-egg md:py-28
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+.custom-list-time {
+  list-style-type: disc;
+
+  li {
+    color: var(--text-color-time);
+    padding-left: 14px;
+  }
+
+  li::marker {
+    color: var(--marker-color-time);
+  }
+}
+
+/* Utilizarea variabilelor în stilurile tale */
+.custom-list-ingredients {
+  list-style-type: disc;
+
+  li {
+    color: var(--text-color-time);
+    padding-left: 14px;
+  }
+
+  li::marker {
+    color: var(--marker-color-ingredients);
+  }
+}
+
+.custom-list-instructions {
+  list-style-type: decimal;
+
+  li {
+    color: var(--text-color-instructions);
+    padding-left: 14px;
+  }
+
+  li::marker {
+    color: var(--marker-color-instructions);
+    font-weight: 600;
   }
 }
